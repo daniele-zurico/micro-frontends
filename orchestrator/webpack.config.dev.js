@@ -1,22 +1,25 @@
-const config = require('./webpack.config.js');
-const webpack = require('webpack');
+const config = require("./webpack.config.js");
+const webpack = require("webpack");
+const merge = require("webpack-merge");
 
-config.plugins.push(new webpack.NamedModulesPlugin());
-config.plugins.push(new webpack.HotModuleReplacementPlugin());
-config.devServer = {
-	contentBase: './build',
-	historyApiFallback: true,
-	headers: {
-		'Access-Control-Allow-Origin': '*',
-	},
-	proxy: {
-		'/common/': {
-			target: 'http://localhost:8234',
-			pathRewrite: { '^/common': '' },
-		},
-	},
-};
-
-config.mode = 'development';
-
-module.exports = config;
+module.exports = env =>
+  merge(config(env), {
+    mode: "development",
+    devServer: {
+      contentBase: "./build",
+      historyApiFallback: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+      proxy: {
+        "/common/": {
+          target: "http://localhost:8234",
+          pathRewrite: { "^/common": "" },
+        },
+      },
+    },
+    plugins: [
+      new webpack.NamedModulesPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+    ],
+  });
