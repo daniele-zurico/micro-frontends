@@ -15,6 +15,25 @@ module.exports = {
         "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js",
       },
     },
+    activeApps: [
+      {
+        name: "navbar",
+        mount: "@portal/navbar",
+        active: true,
+      },
+      {
+        name: "people",
+        mount: "@portal/people",
+        prefix: "people",
+        active: false,
+      },
+      {
+        name: "planets",
+        mount: "@portal/planets",
+        prefix: "planets",
+        active: false,
+      },
+    ],
   },
   stage: {
     config_url: "http://localhost:8233",
@@ -32,6 +51,25 @@ module.exports = {
         "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js",
       },
     },
+    activeApps: [
+      {
+        name: "navbar",
+        mount: "@portal/navbar",
+        active: true,
+      },
+      {
+        name: "people",
+        mount: "@portal/people",
+        prefix: "people",
+        active: false,
+      },
+      {
+        name: "planets",
+        mount: "@portal/planets",
+        prefix: "planets",
+        active: false,
+      },
+    ],
   },
   production: {
     config_url: "http://localhost:8233",
@@ -49,5 +87,24 @@ module.exports = {
         "@portal/fetchWithCache": "http://localhost:8238/fetchWithCache.js",
       },
     },
+    activeApps: [
+      {
+        name: "navbar",
+        mount: "@portal/navbar",
+        active: true,
+      },
+      {
+        name: "people",
+        mount: "@portal/people",
+        prefix: "people",
+        active: false,
+      },
+      {
+        name: "planets",
+        mount: "@portal/planets",
+        prefix: "planets",
+        active: false,
+      },
+    ],
   },
 };

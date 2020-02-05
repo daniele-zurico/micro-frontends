@@ -4,7 +4,7 @@ const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const config = require("./.config.js");
+const config = require("./config.js");
 
 module.exports = env => {
   if (env === undefined) {
@@ -65,7 +65,6 @@ module.exports = env => {
       CopyWebpackPlugin([
         { from: path.resolve(__dirname, "src/index.html") },
         { from: path.resolve(__dirname, "src/styles.css") },
-        { from: path.resolve(__dirname, "src/apps.json") },
       ]),
       new CleanWebpackPlugin(["build"]),
       new HtmlWebpackPlugin({
@@ -80,6 +79,13 @@ module.exports = env => {
         fetchWithCache_url: env ? config[env.NODE_ENV].fetchWithCache_url : "",
         commonDeps_url: env ? config[env.NODE_ENV].commonDeps_url : "",
         apps: env ? JSON.stringify(config[env.NODE_ENV].apps, null, 2) : "",
+      }),
+      new webpack.DefinePlugin({
+        "process.env.activeApps": JSON.stringify(
+          config[env.NODE_ENV].activeApps,
+          null,
+          2
+        ),
       }),
     ],
     devtool: "source-map",

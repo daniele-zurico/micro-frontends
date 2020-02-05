@@ -8,14 +8,10 @@
   <body>
     <script>
       window.SystemJS = window.System;
-
-      function insertNewImportMap() {
-        const newScript = document.createElement("script");
-        newScript.type = "systemjs-importmap";
-        newScript.text = `<%= htmlWebpackPlugin.options.apps %>`;
-        document.head.appendChild(newScript);
-      }
-      insertNewImportMap();
+      const newScript = document.createElement("script");
+      newScript.type = "systemjs-importmap";
+      newScript.text = `<%= htmlWebpackPlugin.options.apps %>`;
+      document.head.appendChild(newScript);
     </script>
     <script src="https://unpkg.com/systemjs@4.1.0/dist/system.js"></script>
     <script src="https://unpkg.com/systemjs@4.1.0/dist/extras/amd.js"></script>
@@ -30,7 +26,7 @@
       System.import("@portal/config");
     </script>
 
-    <!-- Static navbar -->
+    <!-- Load the css .. in the future will be hosted somewhere else -->
     <link
       rel="stylesheet"
       href="<%= htmlWebpackPlugin.options.config_url %>/styles.css"
