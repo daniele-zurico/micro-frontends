@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-  </head>
-  <body>
-    <script>
-      window.SystemJS = window.System;
-      const newScript = document.createElement("script");
-      newScript.type = "systemjs-importmap";
-      newScript.text = `<%= htmlWebpackPlugin.options.apps %>`;
-      document.head.appendChild(newScript);
-    </script>
-    <script src="https://unpkg.com/systemjs@4.1.0/dist/system.js"></script>
-    <script src="https://unpkg.com/systemjs@4.1.0/dist/extras/amd.js"></script>
-    <script src="https://unpkg.com/systemjs@4.1.0/dist/extras/named-exports.js"></script>
-    <script src="https://unpkg.com/systemjs@4.1.0/dist/extras/use-default.js"></script>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+			window.SystemJS = window.System;
+			const newScript = document.createElement('script');
+			newScript.type = 'systemjs-importmap';
+			newScript.text = `<%= htmlWebpackPlugin.options.apps %>`;
+			document.head.appendChild(newScript);
+		</script>
+		<script src="https://unpkg.com/systemjs@4.1.0/dist/system.js"></script>
+		<script src="https://unpkg.com/systemjs@4.1.0/dist/extras/amd.js"></script>
+		<script src="https://unpkg.com/systemjs@4.1.0/dist/extras/named-exports.js"></script>
+		<script src="https://unpkg.com/systemjs@4.1.0/dist/extras/use-default.js"></script>
 
-    <!-- Load the common deps-->
-    <script src="<%= htmlWebpackPlugin.options.commonDeps_url %>/common-deps.js"></script>
+		<!-- load the global config-->
+		<link rel="stylesheet" href="<%= htmlWebpackPlugin.options.config_url %>/config.js" />
 
-    <!-- Load the application -->
-    <script>
-      System.import("@portal/config");
-    </script>
+		<!-- Load the common deps-->
+		<script src="<%= htmlWebpackPlugin.options.commonDeps_url %>/common-deps.js"></script>
 
-    <!-- Load the css .. in the future will be hosted somewhere else -->
-    <link
-      rel="stylesheet"
-      href="<%= htmlWebpackPlugin.options.config_url %>/styles.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
-      rel="stylesheet"
-    />
-    <div id="navbar"></div>
-  </body>
+		<!-- Load the application -->
+		<script>
+			System.import('@portal/config');
+		</script>
+
+		<!-- Load the css .. in the future will be hosted somewhere else -->
+		<link rel="stylesheet" href="<%= htmlWebpackPlugin.options.config_url %>/styles.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+		<div id="navbar"></div>
+	</body>
 </html>
