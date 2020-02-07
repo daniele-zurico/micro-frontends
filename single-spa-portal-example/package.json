@@ -12,7 +12,7 @@
 		"install:planets": "cd ./planets/ && npm i",
 		"install:fetchWithCache": "cd ./fetchWithCache/ && npm i",
 		"audit-fix": "npm run audit-fix:config && npm run audit-fix:navbar && npm run audit-fix:people && npm run audit-fix:planets && npm run audit-fix:fetchWithCache",
-		"start": "concurrently --kill-others --kill-others-on-fail -p name --names \"common-deps,people,planets,fetchWithCache\" \"npm run start:common-deps\" \"npm run start:people\" \"npm run start:planets\"  \"npm run start:fetchWithCache\"",
+		"start": "concurrently --kill-others --kill-others-on-fail -p name --names \"common-deps,people,fetchWithCache\" \"npm run start:common-deps\" \"npm run start:people\"   \"npm run start:fetchWithCache\"",
 		"start:config": "webpack-dev-server --config ./webpack.config.config.dev.js --port 8233",
 		"start:common-deps": "webpack-dev-server --config ./webpack.common-deps.config.dev.js --port 8234",
 		"start:navbar": "cd ./navbar/ && webpack-dev-server --config ./webpack.dev.js --port 8235",
