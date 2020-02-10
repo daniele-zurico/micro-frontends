@@ -22,46 +22,29 @@ $ PORT=8239 react-app-rewired start
 [34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /index.html
 Starting the development server...
 
-Compiled successfully!
-
-You can now view test in the browser.
-
-  Local:            http://localhost:8239/
-  On Your Network:  http://10.172.14.36:8239/
-
-Note that the development build is not optimized.
-To create a production build, use yarn build.
-
-Compiling...
-Failed to compile.
-
-./src/App.js
-  Line 9:15:  'logo' is not defined  no-undef
-
-Search for the keywords to learn more about each error.
-Compiling...
-Compiled successfully!
-Compiling...
 Compiled with warnings.
 
 ./src/App.js
-  Line 4:8:  'styles' is defined but never used  no-unused-vars
+  Line 2:8:  'Logo' is defined but never used  no-unused-vars
 
 Search for the keywords to learn more about each warning.
 To ignore, add // eslint-disable-next-line to the line before.
 
 Compiling...
-Failed to compile.
+Compiled with warnings.
 
 ./src/App.js
-Syntax error: Unexpected token, expected "," (11:26)
+  Line 2:8:  'Logo' is defined but never used  no-unused-vars
 
-   9 | 			<header className="App-header">
-  10 | 				<Logo />
-> 11 | 				<p className={{styles.test}}>
-     | 				                     ^
-  12 | 					Edit <code>src/App.js</code> and save to reload.
-  13 | 				</p>
-  14 | 				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
 Compiling...
-Compiled successfully!
+Compiled with warnings.
+
+./src/App.js
+  Line 2:8:  'Logo' is defined but never used  no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
