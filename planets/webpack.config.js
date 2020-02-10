@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-	entry: path.resolve(__dirname, 'src/planets.js'),
+	entry: path.resolve(__dirname, 'src/spa.bootstrap.js'),
 	output: {
 		filename: 'planets.js',
 		library: 'planets',
@@ -41,7 +41,7 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(['build/planets']),
-		new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'src/planets.js') }]),
+		new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'src/spa.bootstrap.js') }]),
 	],
 	devtool: 'source-map',
 	externals: [
